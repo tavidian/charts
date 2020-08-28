@@ -243,7 +243,7 @@ class SvgTip {
 		this.dataPointList.innerHTML = '';
 
 		this.listValues.map((set, i) => {
-			const color = this.colors[i] || 'black';
+			const color = Array.isArray(this.colors[i]) ? this.colors[i][this.index] : (this.colors[i] || 'black');
 			let value = set.formatted === 0 || set.formatted ? set.formatted : set.value;
 
 			let li = $.create('li', {
@@ -837,6 +837,7 @@ function makeHoriLine(y, label, x1, x2, options={}) {
 	if(!options.stroke) options.stroke = BASE_LINE_COLOR;
 	if(!options.lineType) options.lineType = '';
 	if (options.shortenNumbers) label = shortenLargeNumber(label);
+	if(typeof options.formatLegendY === "undefined") options.formatLegendY = (x) => x;
 
 	console.warn("@@debug makeHoriLine", options);
 
@@ -860,7 +861,7 @@ function makeHoriLine(y, label, x1, x2, options={}) {
 		dy: (FONT_SIZE / 2 - 2) + 'px',
 		'font-size': FONT_SIZE + 'px',
 		'text-anchor': x1 < x2 ? 'end' : 'start',
-		innerHTML: label+""
+		innerHTML: options.formatLegendY(label)+""
 	});
 
 	let line = createSVG('g', {
@@ -1559,15 +1560,20 @@ class BaseChart {
 
 	validateColors(colors, type) {
 		const validColors = [];
-		colors = (colors || []).concat(DEFAULT_COLORS[type]);
-		colors.forEach((string) => {
-			const color = getColor(string);
-			if(!isValidColor(color)) {
-				console.warn('"' + string + '" is not a valid color.');
+		colors = colors || [];
+		colors.forEach((entry) => {
+			if (Array.isArray(entry)) {
+				validColors.push(this.validateColors(entry, type));
+				return;
+			}
+			const color = getColor(entry);
+			if (!isValidColor(color)) {
+				console.warn('"' + entry + '" is not a valid color.');
 			} else {
 				validColors.push(color);
 			}
 		});
+		validColors.concat(DEFAULT_COLORS[type]);
 		return validColors;
 	}
 
@@ -1722,6 +1728,7 @@ class BaseChart {
 			console.error('No data to update.');
 		}
 		this.data = this.prepareData(data);
+		this.data.datasets.forEach((d, i) => { if(d.colors) { this.colors[i] = d.colors;}});
 		this.calc(); // builds state
 		this.render(this.components, this.config.animate);
 	}
@@ -2274,7 +2281,7 @@ let componentConfigs = {
 					data.xPositions[j],
 					y,
 					data.barWidth,
-					c.color,
+					data.colors ? ((j < data.colors.length) ? data.colors[j] : data.colors[0]) : Array.isArray(c.color) ? (j < c.color.length ? c.color[j] : c.color[0]) : c.color,
 					data.labels[j],
 					j,
 					data.offsets[j],
@@ -2308,7 +2315,7 @@ let componentConfigs = {
 				yPositions: oldYPos,
 				offsets: oldOffsets,
 				labels: newLabels,
-
+				colors: newData.colors,
 				zeroLine: this.oldData.zeroLine,
 				barsWidth: this.oldData.barsWidth,
 				barWidth: this.oldData.barWidth,
@@ -2357,7 +2364,7 @@ let componentConfigs = {
 						data.xPositions[j],
 						y,
 						data.radius,
-						c.color,
+						data.colors ? ((j < data.colors.length) ? data.colors[j] : data.colors[0]) : Array.isArray(c.color) ? (j < c.color.length ? c.color[j] : c.color[0]) : c.color,
 						(c.valuesOverPoints ? data.values[j] : ''),
 						j
 					);
@@ -2382,7 +2389,9 @@ let componentConfigs = {
 			this.render({
 				xPositions: oldXPos,
 				yPositions: oldYPos,
+				colors: newData.colors,
 				values: newValues,
+
 
 				zeroLine: this.oldData.zeroLine,
 				radius: this.oldData.radius,
@@ -3410,6 +3419,8 @@ class AxisChart extends BaseChart {
 				values: values,
 				yPositions: scaleAll(values),
 
+				colors: d.colors,
+
 				cumulativeYs: cumulativeYs,
 				cumulativeYPos: scaleAll(cumulativeYs),
 			};
@@ -3534,7 +3545,7 @@ class AxisChart extends BaseChart {
 				'barGraph' + '-' + d.index,
 				{
 					index: index,
-					color: this.colors[index],
+					color: d.colors || this.colors[index],
 					stacked: this.barOptions.stacked,
 
 					// same for all datasets
@@ -3572,6 +3583,7 @@ class AxisChart extends BaseChart {
 					return {
 						xPositions: xPositions,
 						yPositions: d.yPositions,
+						colors: d.colors || undefined,
 						offsets: offsets,
 						// values: d.values,
 						labels: labels,
@@ -3590,7 +3602,7 @@ class AxisChart extends BaseChart {
 				'lineGraph' + '-' + d.index,
 				{
 					index: index,
-					color: this.colors[index],
+					color: d.colors || this.colors[index],
 					svgDefs: this.svgDefs,
 					heatline: this.lineOptions.heatline,
 					regionFill: this.lineOptions.regionFill,
@@ -3610,7 +3622,7 @@ class AxisChart extends BaseChart {
 					return {
 						xPositions: s.xAxis.positions,
 						yPositions: d.yPositions,
-
+						colors: d.colors || undefined,
 						values: d.values,
 
 						zeroLine: minLine,
@@ -3660,11 +3672,12 @@ class AxisChart extends BaseChart {
 		titles.map((label, index) => {
 			let values = this.state.datasets.map((set, i) => {
 				let value = set.values[index];
+				let componentColor = set.hasOwnProperty('colors') ? set.colors : this.colors[i];
 				return {
 					title: set.name,
 					value: value,
 					yPos: set.yPositions[index],
-					color: this.colors[i],
+					color: Array.isArray(componentColor) ? (i < componentColor.length ? componentColor[i] : componentColor[0]) : componentColor,
 					formatted: formatY ? formatY(value) : value,
 				};
 			});

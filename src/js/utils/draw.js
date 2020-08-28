@@ -323,6 +323,7 @@ function makeHoriLine(y, label, x1, x2, options={}) {
 	if(!options.stroke) options.stroke = BASE_LINE_COLOR;
 	if(!options.lineType) options.lineType = '';
 	if (options.shortenNumbers) label = shortenLargeNumber(label);
+	if(typeof options.formatLegendY === "undefined") options.formatLegendY = (x) => x;
 
 	console.warn("@@debug makeHoriLine", options);
 
@@ -346,7 +347,7 @@ function makeHoriLine(y, label, x1, x2, options={}) {
 		dy: (FONT_SIZE / 2 - 2) + 'px',
 		'font-size': FONT_SIZE + 'px',
 		'text-anchor': x1 < x2 ? 'end' : 'start',
-		innerHTML: label+""
+		innerHTML: options.formatLegendY(label)+""
 	});
 
 	let line = createSVG('g', {

@@ -127,6 +127,8 @@ export default class AxisChart extends BaseChart {
 				values: values,
 				yPositions: scaleAll(values),
 
+				colors: d.colors,
+
 				cumulativeYs: cumulativeYs,
 				cumulativeYPos: scaleAll(cumulativeYs),
 			};
@@ -251,7 +253,7 @@ export default class AxisChart extends BaseChart {
 				'barGraph' + '-' + d.index,
 				{
 					index: index,
-					color: this.colors[index],
+					color: d.colors || this.colors[index],
 					stacked: this.barOptions.stacked,
 
 					// same for all datasets
@@ -289,6 +291,7 @@ export default class AxisChart extends BaseChart {
 					return {
 						xPositions: xPositions,
 						yPositions: d.yPositions,
+						colors: d.colors || undefined,
 						offsets: offsets,
 						// values: d.values,
 						labels: labels,
@@ -307,7 +310,7 @@ export default class AxisChart extends BaseChart {
 				'lineGraph' + '-' + d.index,
 				{
 					index: index,
-					color: this.colors[index],
+					color: d.colors || this.colors[index],
 					svgDefs: this.svgDefs,
 					heatline: this.lineOptions.heatline,
 					regionFill: this.lineOptions.regionFill,
@@ -327,7 +330,7 @@ export default class AxisChart extends BaseChart {
 					return {
 						xPositions: s.xAxis.positions,
 						yPositions: d.yPositions,
-
+						colors: d.colors || undefined,
 						values: d.values,
 
 						zeroLine: minLine,
@@ -377,11 +380,12 @@ export default class AxisChart extends BaseChart {
 		titles.map((label, index) => {
 			let values = this.state.datasets.map((set, i) => {
 				let value = set.values[index];
+				let componentColor = set.hasOwnProperty('colors') ? set.colors : this.colors[i];
 				return {
 					title: set.name,
 					value: value,
 					yPos: set.yPositions[index],
-					color: this.colors[i],
+					color: Array.isArray(componentColor) ? (i < componentColor.length ? componentColor[i] : componentColor[0]) : componentColor,
 					formatted: formatY ? formatY(value) : value,
 				};
 			});
