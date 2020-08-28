@@ -3292,6 +3292,7 @@ function getShortenedLabels(chartWidth, labels=[], isSeries=true) {
 	return calcLabels;
 }
 
+/* eslint-disable no-console */
 class AxisChart extends BaseChart {
 	constructor(parent, args) {
 		super(parent, args);
@@ -3330,7 +3331,11 @@ class AxisChart extends BaseChart {
 
 
 		//Tavi
-		this.config.formatLegendY = typeof options.formatLegendY !== "undefined" ? options.formatLegendY : (x) => x;
+		console.warn("@@debug configure", options);
+		this.config.formatLegendY = typeof options.formatLegendY !== "undefined" ? options.formatLegendY : (x) => {
+			console.log("OK",x);
+			return x;
+		};
 
 	}
 

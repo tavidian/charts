@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import BaseChart from './BaseChart';
 import { dataPrep, zeroDataPrep, getShortenedLabels } from '../utils/axis-chart-utils';
 import { AXIS_LEGEND_BAR_SIZE } from '../utils/constants';
@@ -47,7 +48,11 @@ export default class AxisChart extends BaseChart {
 
 
 		//Tavi
-		this.config.formatLegendY = typeof options.formatLegendY !== "undefined" ? options.formatLegendY : (x) => x;
+		console.warn("@@debug configure", options);
+		this.config.formatLegendY = typeof options.formatLegendY !== "undefined" ? options.formatLegendY : (x) => {
+			console.log("OK",x);
+			return x;
+		};
 
 	}
 
