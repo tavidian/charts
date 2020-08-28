@@ -3481,7 +3481,8 @@ class AxisChart extends BaseChart {
 				{
 					mode: this.config.yAxisMode,
 					width: this.width,
-					shortenNumbers: this.config.shortenYAxisNumbers
+					shortenNumbers: this.config.shortenYAxisNumbers,
+					formatLegendY: this.config.formatLegendY
 					// pos: 'right'
 				},
 				function() {
@@ -3516,6 +3517,8 @@ class AxisChart extends BaseChart {
 				}.bind(this)
 			],
 		];
+
+		console.warn("@@debug setupComponents", componentConfigs);
 
 		let barDatasets = this.state.datasets.filter(d => d.chartType === 'bar');
 		let lineDatasets = this.state.datasets.filter(d => d.chartType === 'line');

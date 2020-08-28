@@ -2,16 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2e860ac1-c9f8-4602-bdc0-d95cea3b8d42" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/frappe-charts.esm.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/frappe-charts.esm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/frappe-charts.min.cjs.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/frappe-charts.min.cjs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/frappe-charts.min.cjs.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/frappe-charts.min.cjs.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/frappe-charts.min.esm.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/frappe-charts.min.esm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/frappe-charts.min.esm.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/frappe-charts.min.esm.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/frappe-charts.min.iife.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/frappe-charts.min.iife.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/frappe-charts.min.iife.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/frappe-charts.min.iife.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/assets/js/frappe-charts.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/assets/js/frappe-charts.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/assets/js/frappe-charts.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/docs/assets/js/frappe-charts.min.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rollup.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/rollup.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/charts/AxisChart.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/charts/AxisChart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/objects/ChartComponents.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/objects/ChartComponents.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/utils/draw.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/utils/draw.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,37 +23,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/js/chart.js">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/js/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/js/charts/AxisChart.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="49" column="33" selection-start-line="49" selection-start-column="20" selection-end-line="49" selection-end-column="33" />
+            <state relative-caret-position="623">
+              <caret line="237" column="66" selection-start-line="237" selection-start-column="66" selection-end-line="237" selection-end-column="66" />
               <folding>
                 <element signature="e#0#36#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/js/utils/draw.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
-              <caret line="388" column="31" selection-start-line="388" selection-start-column="26" selection-end-line="388" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -65,34 +44,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/rollup.config.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="245">
-              <caret line="35" column="61" selection-start-line="35" selection-start-column="61" selection-end-line="35" selection-end-column="61" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dist/frappe-charts.esm.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="1498" column="6" selection-start-line="1498" selection-start-column="6" selection-end-line="1498" selection-end-column="6" />
+            <state relative-caret-position="74">
+              <caret line="1503" column="6" selection-start-line="1503" selection-start-column="6" selection-end-line="1503" selection-end-column="6" />
+              <folding>
+                <element signature="n#style#0;n#strong#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package-lock.json">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/js/objects/ChartComponents.js">
+        <entry file="file://$PROJECT_DIR$/src/js/charts/MultiAxisChart.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="117" column="29" lean-forward="true" selection-start-line="117" selection-start-column="29" selection-end-line="117" selection-end-column="29" />
+            <state relative-caret-position="355">
+              <caret line="105" column="43" selection-start-line="105" selection-start-column="38" selection-end-line="105" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -106,7 +74,6 @@
       <find>mousemove</find>
       <find>'click'</find>
       <find>alert(&quot;CLICK!&quot;)</find>
-      <find>AxisChart</find>
       <find>1.5.2</find>
       <find>tooltipOptions</find>
       <find>&quot;yAxis&quot;</find>
@@ -115,9 +82,13 @@
       <find>'text'</find>
       <find>makeHoriLine</find>
       <find>format</find>
+      <find>config.shortenYAxisNumbers</find>
+      <find>tooltipX</find>
       <find>yLine(</find>
-      <find>yLine</find>
       <find>formatToo</find>
+      <find>AxisChart</find>
+      <find>yLine</find>
+      <find>formatX</find>
     </findStrings>
   </component>
   <component name="GOROOT" path="/usr/local/Cellar/go/1.11.5/libexec" />
@@ -127,12 +98,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/js/index.js" />
-        <option value="$PROJECT_DIR$/src/js/charts/AxisChart.js" />
         <option value="$PROJECT_DIR$/src/js/utils/draw.js" />
         <option value="$PROJECT_DIR$/src/js/objects/ChartComponents.js" />
         <option value="$PROJECT_DIR$/rollup.config.js" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/src/js/charts/AxisChart.js" />
       </list>
     </option>
   </component>
@@ -250,20 +221,6 @@
     <entry file="file://$PROJECT_DIR$/dist/frappe-charts.min.iife.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/frappe-charts.esm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="1498" column="6" selection-start-line="1498" selection-start-column="6" selection-end-line="1498" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dist/frappe-charts.min.iife.js.map">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
@@ -271,30 +228,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package-lock.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/charts/AxisChart.js">
+    <entry file="file://$PROJECT_DIR$/src/js/charts/MultiAxisChart.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="49" column="33" selection-start-line="49" selection-start-column="20" selection-end-line="49" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/utils/draw.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="388" column="31" selection-start-line="388" selection-start-column="26" selection-end-line="388" selection-end-column="31" />
+        <state relative-caret-position="355">
+          <caret line="105" column="43" selection-start-line="105" selection-start-column="38" selection-end-line="105" selection-end-column="43" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/js/objects/ChartComponents.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="117" column="29" lean-forward="true" selection-start-line="117" selection-start-column="29" selection-end-line="117" selection-end-column="29" />
+        <state relative-caret-position="240">
+          <caret line="21" column="31" lean-forward="true" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package-lock.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/frappe-charts.esm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="74">
+          <caret line="1503" column="6" selection-start-line="1503" selection-start-column="6" selection-end-line="1503" selection-end-column="6" />
+          <folding>
+            <element signature="n#style#0;n#strong#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rollup.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="35" column="61" selection-start-line="35" selection-start-column="61" selection-end-line="35" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/utils/draw.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="366" column="21" selection-start-line="366" selection-start-column="16" selection-end-line="366" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -308,10 +279,20 @@
     <entry file="file://$PROJECT_DIR$/src/js/chart.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/rollup.config.js">
+    <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="35" column="61" selection-start-line="35" selection-start-column="61" selection-end-line="35" selection-end-column="61" />
+        <state relative-caret-position="30">
+          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/charts/AxisChart.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="623">
+          <caret line="237" column="66" selection-start-line="237" selection-start-column="66" selection-end-line="237" selection-end-column="66" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
