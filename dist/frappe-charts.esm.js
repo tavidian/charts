@@ -838,6 +838,8 @@ function makeHoriLine(y, label, x1, x2, options={}) {
 	if(!options.lineType) options.lineType = '';
 	if (options.shortenNumbers) label = shortenLargeNumber(label);
 
+	console.warn("@@debug makeHoriLine", options);
+
 	let className = 'line-horizontal ' + options.className +
 		(options.lineType === "dashed" ? "dashed": "");
 
@@ -898,11 +900,14 @@ function yLine(y, label, width, options={}) {
 	x1 += options.offset;
 	x2 += options.offset;
 
+	console.warn("@@debug yLine", options);
+
 	return makeHoriLine(y, label, x1, x2, {
 		stroke: options.stroke,
 		className: options.className,
 		lineType: options.lineType,
-		shortenNumbers: options.shortenNumbers
+		shortenNumbers: options.shortenNumbers,
+		formatLegendY: options.formatLegendY
 	});
 }
 
@@ -2086,7 +2091,7 @@ let componentConfigs = {
 		makeElements(data) {
 			return data.positions.map((position, i) =>
 				yLine(position, data.labels[i], this.constants.width,
-					{mode: this.constants.mode, pos: this.constants.pos, shortenNumbers: this.constants.shortenNumbers})
+					{mode: this.constants.mode, pos: this.constants.pos, shortenNumbers: this.constants.shortenNumbers, formatLegendY: this.constants.formatLegendY})
 			);
 		},
 
@@ -3322,6 +3327,11 @@ class AxisChart extends BaseChart {
 		this.config.formatTooltipY = options.tooltipOptions.formatTooltipY;
 
 		this.config.valuesOverPoints = options.valuesOverPoints;
+
+
+		//Tavi
+		this.config.formatLegendY = typeof options.formatLegendY !== "undefined" ? options.formatLegendY : (x) => x;
+
 	}
 
 	prepareData(data=this.data) {

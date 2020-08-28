@@ -44,6 +44,11 @@ export default class AxisChart extends BaseChart {
 		this.config.formatTooltipY = options.tooltipOptions.formatTooltipY;
 
 		this.config.valuesOverPoints = options.valuesOverPoints;
+
+
+		//Tavi
+		this.config.formatLegendY = typeof options.formatLegendY !== "undefined" ? options.formatLegendY : (x) => x;
+
 	}
 
 	prepareData(data=this.data) {
