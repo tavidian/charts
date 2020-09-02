@@ -839,8 +839,6 @@ function makeHoriLine(y, label, x1, x2, options={}) {
 	if (options.shortenNumbers) label = shortenLargeNumber(label);
 	if(typeof options.formatLegendY === "undefined") options.formatLegendY = (x) => x;
 
-	console.warn("@@debug makeHoriLine", options);
-
 	let className = 'line-horizontal ' + options.className +
 		(options.lineType === "dashed" ? "dashed": "");
 
@@ -900,8 +898,6 @@ function yLine(y, label, width, options={}) {
 
 	x1 += options.offset;
 	x2 += options.offset;
-
-	console.warn("@@debug yLine", options);
 
 	return makeHoriLine(y, label, x1, x2, {
 		stroke: options.stroke,
@@ -3340,9 +3336,7 @@ class AxisChart extends BaseChart {
 
 
 		//Tavi
-		console.warn("@@debug configure", options);
 		this.config.formatLegendY = typeof options.formatLegendY !== "undefined" ? options.formatLegendY : (x) => {
-			console.log("OK",x);
 			return x;
 		};
 
@@ -3533,8 +3527,6 @@ class AxisChart extends BaseChart {
 				}.bind(this)
 			],
 		];
-
-		console.warn("@@debug setupComponents", componentConfigs);
 
 		let barDatasets = this.state.datasets.filter(d => d.chartType === 'bar');
 		let lineDatasets = this.state.datasets.filter(d => d.chartType === 'line');

@@ -48,9 +48,7 @@ export default class AxisChart extends BaseChart {
 
 
 		//Tavi
-		console.warn("@@debug configure", options);
 		this.config.formatLegendY = typeof options.formatLegendY !== "undefined" ? options.formatLegendY : (x) => {
-			console.log("OK",x);
 			return x;
 		};
 
@@ -241,8 +239,6 @@ export default class AxisChart extends BaseChart {
 				}.bind(this)
 			],
 		];
-
-		console.warn("@@debug setupComponents", componentConfigs);
 
 		let barDatasets = this.state.datasets.filter(d => d.chartType === 'bar');
 		let lineDatasets = this.state.datasets.filter(d => d.chartType === 'line');

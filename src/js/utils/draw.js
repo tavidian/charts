@@ -325,8 +325,6 @@ function makeHoriLine(y, label, x1, x2, options={}) {
 	if (options.shortenNumbers) label = shortenLargeNumber(label);
 	if(typeof options.formatLegendY === "undefined") options.formatLegendY = (x) => x;
 
-	console.warn("@@debug makeHoriLine", options);
-
 	let className = 'line-horizontal ' + options.className +
 		(options.lineType === "dashed" ? "dashed": "");
 
@@ -386,8 +384,6 @@ export function yLine(y, label, width, options={}) {
 
 	x1 += options.offset;
 	x2 += options.offset;
-
-	console.warn("@@debug yLine", options);
 
 	return makeHoriLine(y, label, x1, x2, {
 		stroke: options.stroke,
